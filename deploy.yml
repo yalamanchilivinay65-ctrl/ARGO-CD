@@ -1,36 +1,41 @@
----
 apiVersion: apps/v1
-kind: Deploy
+kind: Deployment
 metadata:
-  name: Deployment-1
+  name: deployment-1
   labels:
     app: ola
     env: dev
+
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: ola
       env: dev
+
   template:
     metadata:
       labels:
         app: ola
         env: dev
+
     spec:
       containers:
         - name: container-1
           image: ysv26/tickets-booking-app:latest
           ports:
-            containerPort: 80
+            - containerPort: 80
+
           envFrom:
             - configMapRef:
-				name: cm-1
+                name: cm-1
+
           env:
-			- name: course
-			  configMapKeyRef:
-			  	key: Devops
-			  	name: cm-1
+            - name: course
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-1
+                  key: Devops
 
       imagePullSecrets:
         - name: secret2
