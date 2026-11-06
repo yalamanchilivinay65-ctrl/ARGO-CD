@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-	name: cm-1
+  name: cm-1
 data:
-	course: Devops
-	cloud: AWS
+  course: Devops
+  cloud: AWS
