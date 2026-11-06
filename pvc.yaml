@@ -1,0 +1,13 @@
+---
+apVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+	name: PVC1
+spec:
+	accessModes: 
+		- ReadWriteOnce
+
+	storageClassName : mysql-gp3
+	resources:
+	requests:
+		storage: 10Gi 
