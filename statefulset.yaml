@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset-1
+
+spec:
+  serviceName: statefulset-service
+  replicas: 1
+
+  selector:
+    matchLabels:
+      env: Dev
+      app: ola
+
+  template:
+    metadata:
+      labels:
+        env: Dev
+        app: ola
+    spec:
+      containers:
+        - name: cont1
+          image: nginx
+          ports:
+            - containerPort: 80
