@@ -30,12 +30,5 @@ spec:
             - configMapRef:
                 name: cm-1
 
-          env:
-            - name: course
-              valueFrom:
-                configMapKeyRef:
-                  name: cm-1
-                  key: course
-
       imagePullSecrets:
         - name: secret2
