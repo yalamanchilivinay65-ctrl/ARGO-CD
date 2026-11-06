@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemonset-1
+spec:
+  selector:
+    matchLabels:
+      env: Dev
+      app: ola
+
+  template:
+    metadata:
+      labels:
+        env: Dev
+        app: ola
+
+    spec:
+      containers:
+        - name: cont1
+          image: ysv26/house-searching-app:latest
+          ports:
+            - containerPort: 80
