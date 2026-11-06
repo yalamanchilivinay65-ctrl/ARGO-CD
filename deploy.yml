@@ -29,5 +29,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: cm-1
-
+      imagePullSecrets:
+        - name: secret2  
 
