@@ -23,5 +23,14 @@ spec:
           image: ysv26/tickets-booking-app:latest
           ports:
             containerPort: 80
+          envFrom:
+            - configMapRef:
+						  name: cm-1
+          env:
+					- name: course
+					  configMapKeyRef:
+						  key: Devops
+						  name: cm-1
+
       imagePullSecrets:
         - name: secret2
