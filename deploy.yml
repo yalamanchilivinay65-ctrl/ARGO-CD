@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: container-1
-          image: ysv26/tickets-booking-app:latest
+          image: ysv26/sports-ticket-app:latest
           ports:
             - containerPort: 80
 
