@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deploy
+metadata:
+  name: Deployment-1
+  labels:
+    app: ola
+    env: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ola
+      env: dev
+  template:
+    metadata:
+      labels:
+        app: ola
+        env: dev
+    spec:
+      containers:
+        - name: container-1
+          image: ysv26/tickets-booking-app:latest
+          ports:
+            containerPort: 80
+            
