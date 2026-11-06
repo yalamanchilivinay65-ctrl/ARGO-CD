@@ -35,7 +35,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: cm-1
-                  key: Devops
+                  key: course
 
       imagePullSecrets:
         - name: secret2
