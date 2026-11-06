@@ -23,4 +23,5 @@ spec:
           image: ysv26/tickets-booking-app:latest
           ports:
             containerPort: 80
-            
+      imagePullSecrets:
+        - name: secret2
